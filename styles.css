@@ -18,13 +18,13 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   background: var(--gris-fondo);
   color: var(--gris-texto);
-  padding: 2rem 1rem;
+  padding: 2rem;
   min-height: 100vh;
 }
 
 /* ── CONTENEDOR PRINCIPAL ── */
 .cv {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   background: var(--blanco);
   border-radius: 6px;
