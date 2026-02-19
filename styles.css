@@ -24,7 +24,7 @@ body {
 
 /* ── CONTENEDOR PRINCIPAL ── */
 .cv {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   background: var(--blanco);
   border-radius: 6px;
