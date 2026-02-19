@@ -1,0 +1,229 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --azul: #1B3A5C;
+  --azul-medio: #2E5E8E;
+  --blanco: #FFFFFF;
+  --gris-fondo: #F0F3F7;
+  --gris-claro: #E8ECF1;
+  --gris-texto: #444;
+  --texto-claro: #FFFFFFCC;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--gris-fondo);
+  color: var(--gris-texto);
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+/* ── CONTENEDOR PRINCIPAL ── */
+.cv {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--blanco);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+/* ── COLUMNA IZQUIERDA ── */
+.sidebar {
+  background: var(--azul);
+  color: var(--blanco);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.foto-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--azul-medio);
+  border: 3px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Datos personales */
+.sidebar h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--texto-claro);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.dato {
+  margin-bottom: 0.6rem;
+}
+
+.dato .etiqueta {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--texto-claro);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.dato span:last-child {
+  font-size: 0.85rem;
+  color: var(--blanco);
+  word-break: break-all;
+}
+
+/* Habilidades */
+.habilidades-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.habilidades-lista li {
+  font-size: 0.82rem;
+  color: var(--blanco);
+  padding-left: 0.8rem;
+  position: relative;
+}
+
+.habilidades-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+
+/* ── COLUMNA DERECHA ── */
+.main {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Nombre */
+.nombre-bloque h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: var(--azul);
+  line-height: 1.2;
+}
+
+.nombre-bloque .cargo {
+  font-size: 0.85rem;
+  color: var(--azul-medio);
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+/* Secciones */
+.seccion h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--azul);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--azul);
+}
+
+.seccion p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--gris-texto);
+}
+
+/* Experiencia */
+.exp-item {
+  margin-bottom: 1rem;
+}
+
+.exp-item h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--azul);
+  margin-bottom: 0.2rem;
+}
+
+.exp-item p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Formación */
+.formacion-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.formacion-lista li {
+  font-size: 0.87rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.formacion-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--azul);
+}
+
+.formacion-lista li .estado {
+  font-size: 0.75rem;
+  color: var(--azul-medio);
+  font-style: italic;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .cv {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 2rem 1.5rem;
+  }
+
+  .main {
+    padding: 2rem 1.5rem;
+  }
+
+  .nombre-bloque h1 {
+    font-size: 1.5rem;
+  }
+}
